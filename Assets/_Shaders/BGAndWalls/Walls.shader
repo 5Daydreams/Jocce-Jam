@@ -68,11 +68,14 @@ Shader "ShaderKiyoshi/Particles"
 			return noise;
 		}
 
-		void surf (Input i, inout SurfaceOutputStandard o) {
+		void surf (Input i, inout SurfaceOutputStandard o)
+		{
+			float timeFrac = (1+sin(_Time.y*UNITY_TWO_PI/10.0f))*0.5;
+			
 			float3 value = (i.worldPos) / _CellSize;
 			float noise = (perlinNoise(value-_Speed *_Time.xxz)+1)/2;
 
-			float4 finalValue = lerp(_Color0,_Color1,noise);
+			float4 finalValue = lerp(_Color0,_Color1,noise*timeFrac);
 
 			o.Albedo = finalValue;
 		}

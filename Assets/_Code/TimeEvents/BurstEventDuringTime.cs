@@ -46,6 +46,7 @@ namespace _Code.TimeEvents
 
         public void StartBurst()
         {
+            this.gameObject.SetActive(true);
             burstActive = true;
             _secondaryTimer.StartTimer();
             burstTimer = 0;

@@ -12,7 +12,7 @@ Shader "ShaderKiyoshi/GameOver"
     {
         Tags
         {
-            "RenderType"="Transparent" "Queue"="Overlay"
+            "RenderType"="Opaque" "Queue"="Transparent"
         }
         Pass
         {
@@ -119,5 +119,4 @@ finalValue = float4(1,1,1,1);
         }
 
     }
-    FallBack "Diffuse"
 }

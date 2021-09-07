@@ -35,8 +35,6 @@ namespace _Code
         [Header("Enemy Start Stats")] 
         public int enemyStartingMaxHP;
         public float enemyStartingSpeed;
-        public float enemySpeedGrowthFactor;
-        public int speedIteration = 1;
         public Vector3 enemyStartingSize;
         public Vector3 enemyMinSize;
          
@@ -54,8 +52,6 @@ namespace _Code
             spawner.enemyMaxHP = enemyStartingMaxHP;
             spawner.enemySpeed = enemyStartingSpeed;
             spawner.enemySize = enemyStartingSize;
-
-            speedIteration = 1;
         }
 
         public void ChangeGameStats()
@@ -63,13 +59,8 @@ namespace _Code
             float enemyStatBoost = Random.Range(1.01f, 1.03f);
 
             spawner.enemyMaxHP = (int) (spawner.enemyMaxHP * enemyStatBoost);
-
-            float speedParam = (enemySpeedGrowthFactor * enemyStartingSpeed);
-
-            spawner.enemySpeed = Mathf.Lerp(spawner.enemySpeed,player.Speed, 0.01f);
-            speedIteration++;
-            
-            spawner.enemySize = Vector3.Lerp(enemyStartingSize,enemyMinSize,0.02f);
+            spawner.enemySpeed = Mathf.Lerp(spawner.enemySpeed,player.Speed, 0.02f);
+            spawner.enemySize = Vector3.Lerp(enemyStartingSize,enemyMinSize,0.03f);
         }
 
         public void DealDamage()
@@ -84,6 +75,7 @@ namespace _Code
 
         private void GameOver()
         {
+            spawner.gameObject.SetActive(false);
             Destroy(player.gameObject);
             _gameOver.Invoke();
         }

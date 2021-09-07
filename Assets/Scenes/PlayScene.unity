@@ -512,9 +512,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _secondaryTimer: {fileID: 574637819}
-  startActive: 0
-  timeBetweenEvents: 0.1
-  _burstDuration: 1
+  startActive: 1
+  timeBetweenEvents: 0.06
+  _burstDuration: 1.1
 --- !u!114 &574637819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0.19958334, b: 0.18729976, a: 1}
+  m_Color: {r: 0.12549019, g: 0.26893124, b: 0.6509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -782,8 +782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.19953302, g: 0.21834403, b: 0.22700001, a: 1}
-  m_EffectDistance: {x: 2, y: 2}
+  m_EffectColor: {r: 0.71599996, g: 0.5183642, b: 0.33435845, a: 0.7294118}
+  m_EffectDistance: {x: 1.5, y: 1.5}
   m_UseGraphicAlpha: 1
 --- !u!1 &841241262
 GameObject:
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0.19958334, b: 0.18729976, a: 1}
+  m_Color: {r: 0.12549019, g: 0.26893124, b: 0.6509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -878,8 +878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.19953302, g: 0.21834403, b: 0.22700001, a: 1}
-  m_EffectDistance: {x: 2, y: 2}
+  m_EffectColor: {r: 0.71599996, g: 0.5183642, b: 0.33435845, a: 0.7294118}
+  m_EffectDistance: {x: 1.5, y: 1.5}
   m_UseGraphicAlpha: 1
 --- !u!1 &1171939558
 GameObject:
@@ -1080,17 +1080,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2111294572}
-        m_TargetAssemblyTypeName: PlayEventOnRepeat, Assembly-CSharp
-        m_MethodName: StartTimer
-        m_Mode: 1
+      - m_Target: {fileID: 2111294569}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1238761862 stripped
 MonoBehaviour:
@@ -2029,7 +2029,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2111294570
 Transform:
   m_ObjectHideFlags: 0
@@ -2078,8 +2078,6 @@ MonoBehaviour:
   playerStartingHealth: 5
   enemyStartingMaxHP: 65
   enemyStartingSpeed: 0.5
-  enemySpeedGrowthFactor: 0
-  speedIteration: 1
   enemyStartingSize: {x: 3, y: 3, z: 3}
   enemyMinSize: {x: 0.8, y: 0.8, z: 0.8}
   playerCurrentHealth: 5
@@ -2095,7 +2093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c314bebbb633234d81c6df3a67e3c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startActive: 0
+  _startActive: 1
   EventDelay: 10
   TimerEvent:
     m_PersistentCalls:

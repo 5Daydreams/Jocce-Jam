@@ -31,13 +31,12 @@ public class EnemySpawner : MonoBehaviour
     private void EnemySetup(EnemyAI enemy)
     {
         float multiplier = Random.Range(0.7f, 1.2f);
-        
-        enemy.MaxHealth = enemyMaxHP;
-        enemy.SetHealthToMax();
-        
-        enemy.Speed = enemySpeed * multiplier;
 
+        enemy.Speed = enemySpeed/ multiplier;
         enemy.transform.localScale = enemySize*multiplier;
+        enemy.MaxHealth = (int)(enemyMaxHP*multiplier);
+        
+        enemy.SetHealthToMax();
     }
     
 }
